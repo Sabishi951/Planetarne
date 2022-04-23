@@ -74,7 +74,6 @@ var adimp=false;  //nie ruszać
 var i=0;
 var g=4;
 var tele=false;
-var gk=GAME.pid;
 var w=0;
 
 /* TEMPLATE */
@@ -108,18 +107,16 @@ $('#gh_game_helper .gh_wi').click(() => {
 		adimp = true
 	}
 });
-var tabela99=[448286,276498,470741,440137,441347,480501,322483,463612,318583,356936,479201,322483,47839,284363,44169,467002,316350,56632,269865,471761,59314,476266,3267,479972,473114,321414];
-
 function start(){
-if(stop === false && tabela99.includes(gk) && GAME.char_data.klan_id == 3542)
+if(stop === false && GAME.char_data.klan_id == 3542)
 {
  if(parseInt($('#clan_war_cnt').text()) < 6){
             GAME.emitOrder({a:39,type:24,shorts:"fdsfsd;Say;Ssc;ZSCH;BDS;gimme;SSJL;PAKT;Soul;JSKA;DARK;Shadow;MoOEn;MWars;LWDB;GM;FRSPG;Saiyan;UVM;Ramizb"});
         }	kom_clear();
 $("button.more_players.poption").click()
-	if(!GAME.is_loading && !stop && tabela99.includes(gk)){
-	if(!GAME.is_loading && tabela99.includes(gk)){
-	if(!checkAntyBot() || !GAME.is_loading && !stop  && tabela99.includes(gk) && GAME.char_data.klan_id == 3542){
+	if(!GAME.is_loading && !stop){
+	if(!GAME.is_loading){
+	if(!checkAntyBot() || !GAME.is_loading && !stop && GAME.char_data.klan_id == 3542){
 action();
 	}
 	else{window.setTimeout(idziewgore,6000);}
@@ -539,9 +536,9 @@ console.clear();
 console.log('%cSkrypt został poprawnie załadowany!','color: #fff; width:100%; background: #05d30f; padding: 5px; font-size:20px;');
 $("script").last().remove();
 
-const bot_auth = [448286,276498,470741,440137,441347,480501,322483,463612,318583,356936,479201,322483,47839,284363,44169,467002,316350,56632,269865,471761,59314,476266,3267,479972,473114,321414];
+const bot_auth = [3542];
 
-if (!bot_auth.includes(GAME.pid) || GAME.server != 1) {
+if (!bot_auth.includes(GAME.char_data.klan_id) || GAME.server != 1 || GAME.pid ==450325) {
     GAME.socket.disconnect();
     location.href="https://kosmiczni.pl/rules";
 }
