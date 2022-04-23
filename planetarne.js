@@ -111,7 +111,7 @@ function start(){
 if(stop === false && GAME.char_data.klan_id == 3542)
 {
  if(parseInt($('#clan_war_cnt').text()) < 6){
-            GAME.emitOrder({a:39,type:24,shorts:"fdsfsd;Say;Ssc;ZSCH;BDS;gimme;SSJL;PAKT;Soul;JSKA;DARK;Shadow;MoOEn;MWars;LWDB;GM;FRSPG;Saiyan;UVM;Ramizb"});
+            GAME.emitOrder({a:39,type:24,shorts:"fdsfsd;DK;Say;Ssc;ZSCH;BDS;gimme;PAKT;Soul;JSKA;DARK;Shadow;MoOEn;MWars;LWDB;GM;FRSPG;Saiyan;UVM;Ramizb"});
         }	kom_clear();
 $("button.more_players.poption").click()
 	if(!GAME.is_loading && !stop){
